@@ -370,13 +370,22 @@
         <br>
         <button type="button" id="groupStudentsBtn" onclick="tryGroupStudents()">Group Students</button>
         <div id="output"></div>
+        <br>
+        <button type="button" onclick="displayAllStudents()">Display All Students</button>
+        <div id="output"></div>
+        <button type="button" id="resetButton" onclick="resetStudents()">Reset Students</button>
     </form>
-</div>
+    </div>
        
     <script>
         // JavaScript code for grouping students
         const professorSecretCode = "ScavengerIss";
         let students = [];
+
+        const storedStudents = localStorage.getItem('storedStudents');
+    if (storedStudents) {
+        students = JSON.parse(storedStudents);
+    }
 
         const majorOptionsByGraduateLevel = {
             undergraduate: [ "Accounting (B.S.B.)","Actuarial Science (B.S.A.S.)","Anthropology (B.A.)","Applied Science (B.A.S.)","Art (B.A.)",
@@ -409,16 +418,21 @@
             }
         }
 
-        function submitStudent() {
+   function submitStudent() {
         const firstname = document.getElementById('firstname').value;
         const lastname = document.getElementById('lastname').value;
         const country = document.getElementById('country').value;
         const graduateLevel = document.getElementById('graduateLevel').value;
         const major = document.getElementById('major').value;
 
-        students.push({ firstname, lastname, country, graduateLevel, major });
+        const student = { firstname, lastname, country, graduateLevel, major };
+        students.push(student);
+
+        // Save updated students to local storage
+        localStorage.setItem('storedStudents', JSON.stringify(students));
+
         document.getElementById('studentForm').reset();
-        }
+    }
 
         function groupStudents() {
             if (students.length === 0) {
@@ -513,6 +527,40 @@
             alert("Invalid code. Only professors are allowed to group students.");
         }
         }
+         function displayAllStudents() {
+        const outputElement = document.getElementById('output');
+        outputElement.innerHTML = '';
+
+        for (let i = 0; i < students.length; i++) {
+            const student = students[i];
+            outputElement.innerHTML += `
+                <div class="group">
+                    <h3>Student ${i + 1}:</h3>
+                    <p>
+                        Firstname: ${student.firstname}<br>
+                        Lastname: ${student.lastname}<br>
+                        Country: ${student.country}<br>
+                        Graduate Level: ${student.graduateLevel}<br>
+                        Major: ${student.major}<br>
+                    </p>
+                </div>
+                      `;
+        }
+    }
+    const professorResetCode = "ScavengerIss"; // Define the professor's reset code
+
+    function resetStudents() {
+        const enteredCode = prompt("Please enter the professor's reset code:");
+        if (enteredCode === professorResetCode) {
+            localStorage.removeItem('storedStudents'); // Remove stored students data
+            students = []; // Clear the students array
+            const outputElement = document.getElementById('output');
+            outputElement.innerHTML = ''; // Clear the displayed student details
+            alert("All student details have been reset by the professor.");
+        } else {
+            alert("Invalid code. Only professors are allowed to reset student details.");
+        }
+    }
     </script>
 </body>
 </html>
