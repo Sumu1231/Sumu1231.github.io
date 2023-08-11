@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Downtown Trip</title>
+      <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('C:/Users/matha/Downloads/photo-1596812064050-6ca66332873e.jpg'); /* Your background image URL */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: #333; /* Dark text color */
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+     
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #000; /* Yellow heading color */
+        }
+  
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+
+        h1 {
+            text-align: center;
+
+        }
+
+        form {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 50%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="button"] {
+            margin-bottom: 10px;
+        }
+
+        .group {
+
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+    
+</head>
+<body>
+ 
+    <div class="form-container">
+    <form id="studentForm">
+        <img src="C:\Users\matha\Downloads\INTL-V-BGD-CMYK_1.jpg" width="500" height="200" align="center" >
+        <h1>Downtown Scavenger Hunt</h1>
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" required><br>
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" required><br>
+
+
+        <label for="country">Country:</label>
+        <select name="country" id="country">
+        <option>select country</option>
+        <option value="AF">Afghanistan</option>
+        <option value="AX">Aland Islands</option>
+        <option value="AL">Albania</option>
+        <option value="DZ">Algeria</option>
+        <option value="AS">American Samoa</option>
+        <option value="AD">Andorra</option>
+        <option value="AO">Angola</option>
+        <option value="AI">Anguilla</option>
+        <option value="AQ">Antarctica</option>
+        <option value="AG">Antigua and Barbuda</option>
+        <option value="AR">Argentina</option>
+        <option value="AM">Armenia</option>
+        <option value="AW">Aruba</option>
+        <option value="AU">Australia</option>
+        <option value="AT">Austria</option>
+        <option value="AZ">Azerbaijan</option>
+        <option value="BS">Bahamas</option>
+        <option value="BH">Bahrain</option>
+        <option value="BD">Bangladesh</option>
+        <option value="BB">Barbados</option>
+        <option value="BY">Belarus</option>
+        <option value="BE">Belgium</option>
+        <option value="BZ">Belize</option>
+        <option value="BJ">Benin</option>
+        <option value="BM">Bermuda</option>
+        <option value="BT">Bhutan</option>
+        <option value="BO">Bolivia</option>
+        <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+        <option value="BA">Bosnia and Herzegovina</option>
+        <option value="BW">Botswana</option>
+        <option value="BV">Bouvet Island</option>
+        <option value="BR">Brazil</option>
+        <option value="IO">British Indian Ocean Territory</option>
+        <option value="BN">Brunei Darussalam</option>
+        <option value="BG">Bulgaria</option>
+        <option value="BF">Burkina Faso</option>
+        <option value="BI">Burundi</option>
+        <option value="KH">Cambodia</option>
+        <option value="CM">Cameroon</option>
+        <option value="CA">Canada</option>
+        <option value="CV">Cape Verde</option>
+        <option value="KY">Cayman Islands</option>
+        <option value="CF">Central African Republic</option>
+        <option value="TD">Chad</option>
+        <option value="CL">Chile</option>
+        <option value="CN">China</option>
+        <option value="CX">Christmas Island</option>
+        <option value="CC">Cocos (Keeling) Islands</option>
+        <option value="CO">Colombia</option>
+        <option value="KM">Comoros</option>
+        <option value="CG">Congo</option>
+        <option value="CD">Congo, Democratic Republic of the Congo</option>
+        <option value="CK">Cook Islands</option>
+        <option value="CR">Costa Rica</option>
+        <option value="CI">Cote D'Ivoire</option>
+        <option value="HR">Croatia</option>
+        <option value="CU">Cuba</option>
+        <option value="CW">Curacao</option>
+        <option value="CY">Cyprus</option>
+        <option value="CZ">Czech Republic</option>
+        <option value="DK">Denmark</option>
+        <option value="DJ">Djibouti</option>
+        <option value="DM">Dominica</option>
+        <option value="DO">Dominican Republic</option>
+        <option value="EC">Ecuador</option>
+        <option value="EG">Egypt</option>
+        <option value="SV">El Salvador</option>
+        <option value="GQ">Equatorial Guinea</option>
+        <option value="ER">Eritrea</option>
+        <option value="EE">Estonia</option>
+        <option value="ET">Ethiopia</option>
+        <option value="FK">Falkland Islands (Malvinas)</option>
+        <option value="FO">Faroe Islands</option>
+        <option value="FJ">Fiji</option>
+        <option value="FI">Finland</option>
+        <option value="FR">France</option>
+        <option value="GF">French Guiana</option>
+        <option value="PF">French Polynesia</option>
+        <option value="TF">French Southern Territories</option>
+        <option value="GA">Gabon</option>
+        <option value="GM">Gambia</option>
+        <option value="GE">Georgia</option>
+        <option value="DE">Germany</option>
+        <option value="GH">Ghana</option>
+        <option value="GI">Gibraltar</option>
+        <option value="GR">Greece</option>
+        <option value="GL">Greenland</option>
+        <option value="GD">Grenada</option>
+        <option value="GP">Guadeloupe</option>
+        <option value="GU">Guam</option>
+        <option value="GT">Guatemala</option>
+        <option value="GG">Guernsey</option>
+        <option value="GN">Guinea</option>
+        <option value="GW">Guinea-Bissau</option>
+        <option value="GY">Guyana</option>
+        <option value="HT">Haiti</option>
+        <option value="HM">Heard Island and Mcdonald Islands</option>
+        <option value="VA">Holy See (Vatican City State)</option>
+        <option value="HN">Honduras</option>
+        <option value="HK">Hong Kong</option>
+        <option value="HU">Hungary</option>
+        <option value="IS">Iceland</option>
+        <option value="IN">India</option>
+        <option value="ID">Indonesia</option>
+        <option value="IR">Iran, Islamic Republic of</option>
+        <option value="IQ">Iraq</option>
+        <option value="IE">Ireland</option>
+        <option value="IM">Isle of Man</option>
+        <option value="IL">Israel</option>
+        <option value="IT">Italy</option>
+        <option value="JM">Jamaica</option>
+        <option value="JP">Japan</option>
+        <option value="JE">Jersey</option>
+        <option value="JO">Jordan</option>
+        <option value="KZ">Kazakhstan</option>
+        <option value="KE">Kenya</option>
+        <option value="KI">Kiribati</option>
+        <option value="KP">Korea, Democratic People's Republic of</option>
+        <option value="KR">Korea, Republic of</option>
+        <option value="XK">Kosovo</option>
+        <option value="KW">Kuwait</option>
+        <option value="KG">Kyrgyzstan</option>
+        <option value="LA">Lao People's Democratic Republic</option>
+        <option value="LV">Latvia</option>
+        <option value="LB">Lebanon</option>
+        <option value="LS">Lesotho</option>
+        <option value="LR">Liberia</option>
+        <option value="LY">Libyan Arab Jamahiriya</option>
+        <option value="LI">Liechtenstein</option>
+        <option value="LT">Lithuania</option>
+        <option value="LU">Luxembourg</option>
+        <option value="MO">Macao</option>
+        <option value="MK">Macedonia, the Former Yugoslav Republic of</option>
+        <option value="MG">Madagascar</option>
+        <option value="MW">Malawi</option>
+        <option value="MY">Malaysia</option>
+        <option value="MV">Maldives</option>
+        <option value="ML">Mali</option>
+        <option value="MT">Malta</option>
+        <option value="MH">Marshall Islands</option>
+        <option value="MQ">Martinique</option>
+        <option value="MR">Mauritania</option>
+        <option value="MU">Mauritius</option>
+        <option value="YT">Mayotte</option>
+        <option value="MX">Mexico</option>
+        <option value="FM">Micronesia, Federated States of</option>
+        <option value="MD">Moldova, Republic of</option>
+        <option value="MC">Monaco</option>
+        <option value="MN">Mongolia</option>
+        <option value="ME">Montenegro</option>
+        <option value="MS">Montserrat</option>
+        <option value="MA">Morocco</option>
+        <option value="MZ">Mozambique</option>
+        <option value="MM">Myanmar</option>
+        <option value="NA">Namibia</option>
+        <option value="NR">Nauru</option>
+        <option value="NP">Nepal</option>
+        <option value="NL">Netherlands</option>
+        <option value="AN">Netherlands Antilles</option>
+        <option value="NC">New Caledonia</option>
+        <option value="NZ">New Zealand</option>
+        <option value="NI">Nicaragua</option>
+        <option value="NE">Niger</option>
+        <option value="NG">Nigeria</option>
+        <option value="NU">Niue</option>
+        <option value="NF">Norfolk Island</option>
+        <option value="MP">Northern Mariana Islands</option>
+        <option value="NO">Norway</option>
+        <option value="OM">Oman</option>
+        <option value="PK">Pakistan</option>
+        <option value="PW">Palau</option>
+        <option value="PS">Palestinian Territory, Occupied</option>
+        <option value="PA">Panama</option>
+        <option value="PG">Papua New Guinea</option>
+        <option value="PY">Paraguay</option>
+        <option value="PE">Peru</option>
+        <option value="PH">Philippines</option>
+        <option value="PN">Pitcairn</option>
+        <option value="PL">Poland</option>
+        <option value="PT">Portugal</option>
+        <option value="PR">Puerto Rico</option>
+        <option value="QA">Qatar</option>
+        <option value="RE">Reunion</option>
+        <option value="RO">Romania</option>
+        <option value="RU">Russian Federation</option>
+        <option value="RW">Rwanda</option>
+        <option value="BL">Saint Barthelemy</option>
+        <option value="SH">Saint Helena</option>
+        <option value="KN">Saint Kitts and Nevis</option>
+        <option value="LC">Saint Lucia</option>
+        <option value="MF">Saint Martin</option>
+        <option value="PM">Saint Pierre and Miquelon</option>
+        <option value="VC">Saint Vincent and the Grenadines</option>
+        <option value="WS">Samoa</option>
+        <option value="SM">San Marino</option>
+        <option value="ST">Sao Tome and Principe</option>
+        <option value="SA">Saudi Arabia</option>
+        <option value="SN">Senegal</option>
+        <option value="RS">Serbia</option>
+        <option value="CS">Serbia and Montenegro</option>
+        <option value="SC">Seychelles</option>
+        <option value="SL">Sierra Leone</option>
+        <option value="SG">Singapore</option>
+        <option value="SX">Sint Maarten</option>
+        <option value="SK">Slovakia</option>
+        <option value="SI">Slovenia</option>
+        <option value="SB">Solomon Islands</option>
+        <option value="SO">Somalia</option>
+        <option value="ZA">South Africa</option>
+        <option value="GS">South Georgia and the South Sandwich Islands</option>
+        <option value="SS">South Sudan</option>
+        <option value="ES">Spain</option>
+        <option value="LK">Sri Lanka</option>
+        <option value="SD">Sudan</option>
+        <option value="SR">Suriname</option>
+        <option value="SJ">Svalbard and Jan Mayen</option>
+        <option value="SZ">Swaziland</option>
+        <option value="SE">Sweden</option>
+        <option value="CH">Switzerland</option>
+        <option value="SY">Syrian Arab Republic</option>
+        <option value="TW">Taiwan, Province of China</option>
+        <option value="TJ">Tajikistan</option>
+        <option value="TZ">Tanzania, United Republic of</option>
+        <option value="TH">Thailand</option>
+        <option value="TL">Timor-Leste</option>
+        <option value="TG">Togo</option>
+        <option value="TK">Tokelau</option>
+        <option value="TO">Tonga</option>
+        <option value="TT">Trinidad and Tobago</option>
+        <option value="TN">Tunisia</option>
+        <option value="TR">Turkey</option>
+        <option value="TM">Turkmenistan</option>
+        <option value="TC">Turks and Caicos Islands</option>
+        <option value="TV">Tuvalu</option>
+        <option value="UG">Uganda</option>
+        <option value="UA">Ukraine</option>
+        <option value="AE">United Arab Emirates</option>
+        <option value="GB">United Kingdom</option>
+        <option value="US">United States</option>
+        <option value="UM">United States Minor Outlying Islands</option>
+        <option value="UY">Uruguay</option>
+        <option value="UZ">Uzbekistan</option>
+        <option value="VU">Vanuatu</option>
+        <option value="VE">Venezuela</option>
+        <option value="VN">Viet Nam</option>
+        <option value="VG">Virgin Islands, British</option>
+        <option value="VI">Virgin Islands, U.s.</option>
+        <option value="WF">Wallis and Futuna</option>
+        <option value="EH">Western Sahara</option>
+        <option value="YE">Yemen</option>
+        <option value="ZM">Zambia</option>
+        <option value="ZW">Zimbabwe</option>
+    </select><br>
+
+        <label for="graduateLevel">Graduate Level:</label>
+        <select id="graduateLevel" onchange="updateMajorOptions()" required>
+            <option value="" disabled selected>Select</option>
+            <option value="undergraduate">Undergraduate</option>
+            <option value="graduate">Graduate</option>
+           
+        </select><br>
+
+        <label for="major">Major:</label>
+        <select id="major" required>
+            <!-- Default option will be replaced dynamically -->
+            <option value="" disabled selected>Select a graduate level first</option>
+        </select><br>
+
+        <button type="button" onclick="submitStudent()">Submit</button>
+
+        <br>
+        <button type="button" id="groupStudentsBtn" onclick="tryGroupStudents()">Group Students</button>
+        <div id="output"></div>
+    </form>
+</div>
+       
+    <script>
+        // JavaScript code for grouping students
+        const professorSecretCode = "ScavengerIss";
+        let students = [];
+
+        const majorOptionsByGraduateLevel = {
+            undergraduate: [ "Accounting (B.S.B.)","Actuarial Science (B.S.A.S.)","Anthropology (B.A.)","Applied Science (B.A.S.)","Art (B.A.)",
+                            "Art (B.F.A.)","Design (B.F.A.)","Web Design With Elective Studies in Information Technology (B.F.A.)","Art Education (B.A.)","Biochemistry (B.S.)","Biology (B.S.)","Business (B.S.B.)","Business Economics (B.S.B.)","Chemistry (B.S.)","Chemistry (B.S.C.)","Civil Engineering (B.S.C.E.)","Communication (B.A.)","Communication Sciences And Disorders (B.S.)","Computer Engineering (B.S.Cmp.E.)","Computer Engineering Technology (B.S.)","Computer Science (B.A.)","Computer Science (B.S.)","Construction Management (B.S.)","Criminal Justice (B.S.C.J.)","Data Science And Applied Statistics (B.S.D.S.A.S.)","Early Childhood (B.S.Ed.) - Birth To Age 5 (Non-Licensure)","Early Childhood (B.S.Ed.) - Preschool To Grade 3 (Licensure)","Economics (B.A.)","Electrical Engineering (B.S.E.E.)","Electrical Engineering Technology (B.S.)","Elementary Education (B.S.Ed.)","Education Studies (Non-Licensure) Elementary (B.S.Ed.)","English (B.A.)","Finance (B.S.B.)","General Studies (B.G.S.)","History (B.A.)","Hospitality Management (B.S.)","Human Services (B.S.)","Industrial Engineering Technology (B.S.)","Information Systems (B.S.)","Information Technology (B.S.)","Interior Design (B.S.)","Management (B.S.B.)","Marketing (B.S.B.)","Mathematics (B.S.)","Mechanical Engineering (B.S.M.E.)","Mechanical Engineering Technology (B.S.)","Money and Banking (B.S.B.)","Music (B.S.M.) Popular Music","Music (B.S.M.) and an Outside Field","Music Education (B.Mus.Ed)","Music Industry (B.S.M.)","Music Performance (B.M.)","Music Technology (B.M.)","Music Therapy (B.S.M.T.)","Organizational Leadership (B.S.)","Physics (B.S.)","Political Science (B.A.)","Psychology (B.A.)","Psychology (B.S.)","Education Studies (Non-Licensure) Secondary (B.S.Ed.)","Secondary Education - Middle School Generalist 5-9 (B.S.Ed.)","Secondary Education - Second Degree","Sociology (B.A.)","Spanish (B.A.)","Theatre (B.A.)","Musical Theatre (B.F.A.)","Women’s Studies (B.A.)"],
+            graduate: ["Biology, M.S", "MBA ", "Computer Science, M.S", "Counselor Education, M.S.Ed","Educational Leadership, M.S.Ed", "Elementary Education, M.S.Ed", "Secondary Education, M.S.Ed", "Special Education, M.S.Ed", "Mechanical Engineering, M.S.E","Computer Engineering, M.S", "Electrical Engineering, M.S", "System Engineering, M.S", "English, M.A", "English, M.A.T", "Mathematics, M.S", "Music Therapy, M.M.T", "Organizational Leadership, M.S","Professional Communication, M.A","Speech-Language Pathology, M.S","Technology, M.S"]
+        };
+
+        function updateMajorOptions() {
+            const graduateLevel = document.getElementById('graduateLevel').value;
+            const majorSelect = document.getElementById('major');
+
+            // Clear existing options
+            majorSelect.innerHTML = '';
+
+            // Add default option
+            const defaultOption = document.createElement('option');
+            defaultOption.value = "";
+            defaultOption.disabled = true;
+            defaultOption.selected = true;
+            defaultOption.textContent = "Select a major";
+            majorSelect.appendChild(defaultOption);
+
+            // Populate major options based on graduate level
+            const majorOptions = majorOptionsByGraduateLevel[graduateLevel];
+            for (const majorOption of majorOptions) {
+                const option = document.createElement('option');
+                option.value = majorOption;
+                option.textContent = majorOption;
+                majorSelect.appendChild(option);
+            }
+        }
+
+        function submitStudent() {
+        const firstname = document.getElementById('firstname').value;
+        const lastname = document.getElementById('lastname').value;
+        const country = document.getElementById('country').value;
+        const graduateLevel = document.getElementById('graduateLevel').value;
+        const major = document.getElementById('major').value;
+
+        students.push({ firstname, lastname, country, graduateLevel, major });
+        document.getElementById('studentForm').reset();
+        }
+
+        function groupStudents() {
+            if (students.length === 0) {
+                alert("No students to group. Please register students first.");
+                return;
+            }
+
+            const groupedStudents = groupStudentsByMajorAndCountry(students);
+            displayGrouping(groupedStudents);
+        }
+
+        function groupStudentsByMajorAndCountry(students) {
+            const groupedStudents = [];
+            const studentsByMajorAndCountry = {};
+
+            // Separate students based on their majors and countries
+            for (const student of students) {
+                const key = student.major + "-" + student.country;
+                if (!studentsByMajorAndCountry[key]) {
+                    studentsByMajorAndCountry[key] = [];
+                }
+                studentsByMajorAndCountry[key].push(student);
+            }
+
+            // Determine the number of students in each group
+            const totalStudents = students.length;
+            const groupCount = 3; // Fixed to 3 groups
+            const groupSize = Math.floor(totalStudents / groupCount); // Calculate the target group size
+
+            // Create groups with major diversity based on country and major
+            const keys = Object.keys(studentsByMajorAndCountry);
+            let currentIndex = 0;
+
+            for (let i = 0; i < groupCount; i++) {
+                const group = [];
+
+                // Fill the group with students of diverse majors from different countries
+                while (group.length < groupSize && currentIndex < keys.length) {
+                    const studentsOfMajorAndCountry = studentsByMajorAndCountry[keys[currentIndex]];
+
+                    // Add a student to the group and move to the next country/major combination
+                    if (studentsOfMajorAndCountry.length > 0) {
+                        group.push(studentsOfMajorAndCountry.shift());
+                    }
+
+                    currentIndex++;
+                }
+
+                groupedStudents.push(group);
+            }
+
+            // Distribute any remaining students sequentially to the groups
+            let remainingStudents = totalStudents % groupCount;
+            for (let i = 0; i < remainingStudents; i++) {
+                const student = students[students.length - 1 - i];
+                groupedStudents[i].push(student);
+            }
+
+            return groupedStudents;
+        }
+
+
+        function displayGrouping(groupedStudents) {
+            const outputElement = document.getElementById('output');
+            outputElement.innerHTML = '';
+
+            for (let i = 0; i < groupedStudents.length; i++) {
+                const group = groupedStudents[i];
+                const groupDiv = document.createElement('div');
+                groupDiv.innerHTML = `<h3>Group ${i + 1}:</h3>`;
+
+                for (const student of group) {
+                    groupDiv.innerHTML += `
+                        <p>
+                            Firstname: ${student.firstname}<br>
+                            Lastname: ${student.lastname}<br>
+                            Country: ${student.country}<br>
+                            Graduate Level: ${student.graduateLevel}<br>
+                            Major: ${student.major}<br>
+                        </p>
+                    `;
+                }
+
+                outputElement.appendChild(groupDiv);
+            }
+        }
+        function tryGroupStudents() {
+        const enteredCode = prompt("Please enter the professor's secret code:");
+        if (enteredCode === professorSecretCode) {
+            groupStudents();
+        } else {
+            alert("Invalid code. Only professors are allowed to group students.");
+        }
+        }
+    </script>
+</body>
+</html>
