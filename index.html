@@ -403,30 +403,7 @@
             graduate: ["Biology, M.S", "MBA ", "Computer Science, M.S", "Counselor Education, M.S.Ed","Educational Leadership, M.S.Ed", "Elementary Education, M.S.Ed", "Secondary Education, M.S.Ed", "Special Education, M.S.Ed", "Mechanical Engineering, M.S.E","Computer Engineering, M.S", "Electrical Engineering, M.S", "System Engineering, M.S", "English, M.A", "English, M.A.T", "Mathematics, M.S", "Music Therapy, M.M.T", "Organizational Leadership, M.S","Professional Communication, M.A","Speech-Language Pathology, M.S","Technology, M.S"]
         };
 
-        function updateMajorOptions() {
-            const graduateLevel = document.getElementById('graduateLevel').value;
-            const majorSelect = document.getElementById('major');
-
-            // Clear existing options
-            majorSelect.innerHTML = '';
-
-            // Add default option
-            const defaultOption = document.createElement('option');
-            defaultOption.value = "";
-            defaultOption.disabled = true;
-            defaultOption.selected = true;
-            defaultOption.textContent = "Select a major";
-            majorSelect.appendChild(defaultOption);
-
-            // Populate major options based on graduate level
-            const majorOptions = majorOptionsByGraduateLevel[graduateLevel];
-            for (const majorOption of majorOptions) {
-                const option = document.createElement('option');
-                option.value = majorOption;
-                option.textContent = majorOption;
-                majorSelect.appendChild(option);
-            }
-        }
+ 
 
    function submitStudent() {
         const firstname = document.getElementById('firstname').value;
@@ -443,7 +420,35 @@
 
         document.getElementById('studentForm').reset();
         majorSelect.innerHTML = '<option value="" disabled selected>Select a major</option>';
+        document.getElementById('graduateLevel').selectedIndex = 0;
     }
+
+    function updateMajorOptions() {
+    const graduateLevel = document.getElementById('graduateLevel').value;
+    const majorSelect = document.getElementById('major');
+
+    // Clear existing options
+    majorSelect.innerHTML = '';
+
+    // Add default option
+    const defaultOption = document.createElement('option');
+    defaultOption.value = "";
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    defaultOption.textContent = "Select a major";
+    majorSelect.appendChild(defaultOption);
+
+    if (graduateLevel === "undergraduate" || graduateLevel === "graduate") {
+        // Populate major options based on graduate level
+        const majorOptions = majorOptionsByGraduateLevel[graduateLevel];
+        for (const majorOption of majorOptions) {
+            const option = document.createElement('option');
+            option.value = majorOption;
+            option.textContent = majorOption;
+            majorSelect.appendChild(option);
+        }
+    }
+}
 
         function groupStudents() {
             if (students.length === 0) {
