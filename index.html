@@ -372,7 +372,7 @@
       <label for="major">Major:</label>
       <select id="major" required>
       <!-- Default option will be replaced dynamically -->
-      <option value="" disabled selected>Select a Graduate level first </option>
+      <option value="" disabled selected>Select a Major </option>
 </select><br>
 
         </select><br>
@@ -431,7 +431,7 @@
     const majorSelect = document.getElementById('major');
 
     // Reset major select dropdown to default state
-    majorSelect.innerHTML = '<option value="" disabled selected>Select a Graduate level first</option>';
+    majorSelect.innerHTML = '<option value="" disabled selected>Select a Major</option>';
 
     if (graduateLevel === "undergraduate" || graduateLevel === "graduate") {
         // Populate major options based on graduate level
