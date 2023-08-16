@@ -361,11 +361,13 @@
         <option value="ZW">Zimbabwe</option>
     </select><br>
 
-        <label for="graduateLevel">Graduate Level:</label>
-        <select id="graduateLevel" onchange="updateMajorOptions()" required>
-            <option value="" disabled selected>Select</option>
-            <option value="undergraduate">Undergraduate</option>
-            <option value="graduate">Graduate</option>
+    <label for="graduateLevel">Graduate Level:</label>
+    <select id="graduateLevel" onchange="updateMajorOptions()" required>
+    <option value="" disabled selected>Select</option>
+    <option value="undergraduate">Undergraduate</option>
+    <option value="graduate">Graduate</option>
+        
+</select><br>
            
         </select><br>
 
@@ -403,25 +405,22 @@
             graduate: ["Biology, M.S", "MBA ", "Computer Science, M.S", "Counselor Education, M.S.Ed","Educational Leadership, M.S.Ed", "Elementary Education, M.S.Ed", "Secondary Education, M.S.Ed", "Special Education, M.S.Ed", "Mechanical Engineering, M.S.E","Computer Engineering, M.S", "Electrical Engineering, M.S", "System Engineering, M.S", "English, M.A", "English, M.A.T", "Mathematics, M.S", "Music Therapy, M.M.T", "Organizational Leadership, M.S","Professional Communication, M.A","Speech-Language Pathology, M.S","Technology, M.S"]
         };
 
- 
+    function submitStudent() {
+    const firstname = document.getElementById('firstname').value;
+    const lastname = document.getElementById('lastname').value;
+    const country = document.getElementById('country').value;
+    const graduateLevel = document.getElementById('graduateLevel').value;
+    const major = document.getElementById('major').value;
 
-   function submitStudent() {
-        const firstname = document.getElementById('firstname').value;
-        const lastname = document.getElementById('lastname').value;
-        const country = document.getElementById('country').value;
-        const graduateLevel = document.getElementById('graduateLevel').value;
-        const major = document.getElementById('major').value;
+    const student = { firstname, lastname, country, graduateLevel, major };
+    students.push(student);
 
-        const student = { firstname, lastname, country, graduateLevel, major };
-        students.push(student);
+    // Save updated students to local storage
+    localStorage.setItem('storedStudents', JSON.stringify(students));
 
-        // Save updated students to local storage
-        localStorage.setItem('storedStudents', JSON.stringify(students));
-
-        document.getElementById('studentForm').reset();
-        majorSelect.innerHTML = '<option value="" disabled selected>Select a major</option>';
-        document.getElementById('graduateLevel').selectedIndex = 0;
-        updateMajorOptions();
+    document.getElementById('studentForm').reset();
+    document.getElementById('graduateLevel').selectedIndex = 0; // Reset graduate level dropdown
+    updateMajorOptions(); // Update major options for the default graduate level
     }
 
     function updateMajorOptions() {
