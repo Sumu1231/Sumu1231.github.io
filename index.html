@@ -5,7 +5,7 @@
       <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://s3.us-east-2.amazonaws.com/assets.fwairport.com/uploads/Pages/_1280xAUTO_fit_center-center_none/Downtown-Fort-Wayne-aerial-860x429.jpg?v=1689617549'); /* Your background image URL */
+            background-image: url('C:/Users/matha/Downloads/photo-1596812064050-6ca66332873e.jpg'); /* Your background image URL */
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -72,11 +72,18 @@
             margin-bottom: 10px;
         }
 
+       .group-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        }
+
         .group {
 
             border: 1px solid #ddd;
             padding: 10px;
             margin-bottom: 20px;
+            max-width: 300px;
         }
         
     </style>
@@ -86,7 +93,7 @@
  
     <div class="form-container">
     <form id="studentForm">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Purdue_University_Fort_Wayne_logo.svg/1200px-Purdue_University_Fort_Wayne_logo.svg.png" width="500" height="200" align="center" >
+        <img src="C:\Users\matha\Downloads\INTL-V-BGD-CMYK_1.jpg" width="500" height="200" align="center" >
         <h1>Downtown Scavenger Hunt</h1>
         <label for="firstname">First Name:</label>
         <input type="text" id="firstname" required><br>
@@ -369,7 +376,7 @@
 
         <br>
         <button type="button" id="groupStudentsBtn" onclick="tryGroupStudents()">Group Students</button>
-        <div id="output"></div>
+        <div class="group-container" id="output"></div>
         <br>
         <button type="button" onclick="displayAllStudents()">Display All Students</button>
         <div id="output"></div>
