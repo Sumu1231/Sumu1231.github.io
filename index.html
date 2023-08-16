@@ -371,10 +371,12 @@
            
         </select><br>
 
-        <label for="major">Major:</label>
-        <select id="major" required>
-            <!-- Default option will be replaced dynamically -->
-            <option value="" disabled selected>Select a graduate level first</option>
+      <label for="major">Major:</label>
+      <select id="major" required>
+      <!-- Default option will be replaced dynamically -->
+      <option value="" disabled selected>Select a major</option>
+</select><br>
+
         </select><br>
 
         <button type="button" onclick="submitStudent()">Submit</button>
@@ -410,7 +412,8 @@
     const lastname = document.getElementById('lastname').value;
     const country = document.getElementById('country').value;
     const graduateLevel = document.getElementById('graduateLevel').value;
-    const major = document.getElementById('major').value;
+    const majorSelect = document.getElementById('major'); // Get major select element
+    const major = majorSelect.value; // Get the selected major value
 
     const student = { firstname, lastname, country, graduateLevel, major };
     students.push(student);
@@ -420,23 +423,17 @@
 
     document.getElementById('studentForm').reset();
     document.getElementById('graduateLevel').selectedIndex = 0; // Reset graduate level dropdown
+    majorSelect.selectedIndex = 0; // Reset major select dropdown
     updateMajorOptions(); // Update major options for the default graduate level
-    }
+}
+
 
     function updateMajorOptions() {
     const graduateLevel = document.getElementById('graduateLevel').value;
     const majorSelect = document.getElementById('major');
 
-    // Clear existing options
-    majorSelect.innerHTML = '';
-
-    // Add default option
-    const defaultOption = document.createElement('option');
-    defaultOption.value = "";
-    defaultOption.disabled = true;
-    defaultOption.selected = true;
-    defaultOption.textContent = "Select a major";
-    majorSelect.appendChild(defaultOption);
+    // Reset major select dropdown to default state
+    majorSelect.innerHTML = '<option value="" disabled selected>Select a major</option>';
 
     if (graduateLevel === "undergraduate" || graduateLevel === "graduate") {
         // Populate major options based on graduate level
@@ -449,6 +446,7 @@
         }
     }
 }
+
 
         function groupStudents() {
             if (students.length === 0) {
