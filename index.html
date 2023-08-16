@@ -442,6 +442,7 @@
         localStorage.setItem('storedStudents', JSON.stringify(students));
 
         document.getElementById('studentForm').reset();
+        majorSelect.innerHTML = '<option value="" disabled selected>Select a major</option>';
     }
 
         function groupStudents() {
